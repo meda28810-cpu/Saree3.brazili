@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سريع - الولي الحلاوين | تطوير BRAZILI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --sudan-red: #d21034;
+            --sudan-green: #007229;
+            --sudan-black: #000000;
+            --gold: #ffcc00;
+            --white: #ffffff;
+            --soft-gray: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--soft-gray);
+            color: var(--sudan-black);
+        }
+
+        /* Header */
+        header {
+            background: var(--sudan-black);
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 4px solid var(--sudan-green);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .brand h1 {
+            color: var(--gold);
+            margin: 0;
+            font-size: 28px;
+            letter-spacing: 2px;
+        }
+
+        .brand span {
+            color: var(--white);
+            font-size: 12px;
+            display: block;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(45deg, rgba(0,0,0,0.8), rgba(0,114,41,0.6)), url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80&w=1469');
+            background-size: cover;
+            background-position: center;
+            height: 350px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: var(--white);
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero h2 { font-size: 35px; margin-bottom: 10px; }
+
+        /* Form Container */
+        .main-card {
+            max-width: 800px;
+            margin: -50px auto 40px;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        label { display: block; margin-bottom: 8px; font-weight: bold; color: var(--sudan-black); }
+        
+        .form-input {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 2px solid #eee;
+            border-radius: 10px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        /* Buttons */
+        .btn-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .btn {
+            padding: 15px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .btn-primary { background: var(--sudan-red); color: white; width: 100%; margin-bottom: 15px; }
+        .btn-call { background: var(--sudan-black); color: var(--gold); }
+        .btn-whatsapp { background: #25d366; color: white; }
+
+        .btn:hover { opacity: 0.9; transform: translateY(-3px); }
+
+        /* Location Info */
+        .village-info {
+            text-align: center;
+            padding: 40px 5%;
+            background: var(--white);
+        }
+
+        footer {
+            background: var(--sudan-black);
+            color: var(--white);
+            text-align: center;
+            padding: 40px;
+        }
+
+        .brazili-footer {
+            color: var(--gold);
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 600px) {
+            .btn-group { grid-template-columns: 1fr; }
+            .hero h2 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="brand">
+            <h1>سريع | SAREE3</h1>
+            <span>قرية الولي - الحلاوين</span>
+        </div>
+        <div style="color: var(--gold); font-weight: bold;">
+            <i class="fas fa-check-circle"></i> خدمة BRAZILI المعتمدة
+        </div>
+    </header>
+
+    <section class="hero">
+        <h2>صيانة الأجهزة المنزلية بقرية الولي</h2>
+        <p>سرعة، جودة، وأمان لأهالينا في الحلاوين</p>
+    </section>
+
+    <div class="main-card">
+        <h3 style="text-align: center; color: var(--sudan-green); margin-top: 0;">اطلب الفني الآن</h3>
+        <form id="villageForm">
+            <label>حدد منطقتك في قرية الولي:</label>
+            <select class="form-input" required>
+                <option value="">اختر الحي...</option>
+                <option>حي أنصار السنة</option>
+                <option>حي الرحمة</option>
+                <option>حي النادي الكبير</option>
+                <option>حي المسجد العتيق</option>
+                <option>حي نادي الشعلة</option>
+            </select>
+
+            <label>نوع الجهاز (مكيف، ثلاجة، إلخ):</label>
+            <input type="text" class="form-input" placeholder="مثال: مكيف نسمة" required>
+
+            <label>رقم هاتف التواصل:</label>
+            <input type="tel" class="form-input" placeholder="0xxxxxxxxx" required>
+
+            <button type="submit" class="btn btn-primary">إرسال الطلب لـ BRAZILI</button>
+        </form>
+
+        <div class="btn-group">
+            <a href="tel:+249112002803" class="btn btn-call">
+                <i class="fas fa-phone-alt"></i> إتصال هاتفي
+            </a>
+            <a href="https://wa.me/249112002803" class="btn btn-whatsapp">
+                <i class="fab fa-whatsapp"></i> واتساب سريع
+            </a>
+        </div>
+    </div>
+
+    <section class="village-info">
+        <h3><i class="fas fa-map-marker-alt" style="color: var(--sudan-red);"></i> تغطية شاملة لقرية الولي</h3>
+        <p>نخدم جميع الأحياء: أنصار السنة، الرحمة، النادي الكبير، المسجد العتيق، ونادي الشعلة.</p>
+    </section>
+
+    <footer>
+        <p>جميع الحقوق محفوظة لمنصة سريع للصيانة - السودان</p>
+        <div class="brazili-footer">DEVELOPED & OWNED BY BRAZILI</div>
+        <p style="font-size: 12px; margin-top: 10px; opacity: 0.7;">قرية الولي - الحلاوين - 2026</p>
+    </footer>
+
+    <script>
+        document.getElementById('villageForm').onsubmit = function(e) {
+            e.preventDefault();
+            alert('تم استلام طلبك يا ابن الولي! فريق BRAZILI السودان سيتواصل معك حالاً.');
+        }
+    </script>
+
+</body>
+</html>
